@@ -267,7 +267,7 @@ if __name__ == "__main__":
             if src.startswith("http"):
                 data += requests.get(src).text
             else:
-                with open(src, "r") as f:
+                with open(src, "r", encoding='utf-8') as f:
                     data += f.read()
         technique_ids.update(AttackDB.extract_ids(data))
 
